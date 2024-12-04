@@ -1,207 +1,309 @@
-
-<html>
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="https://feeldreams.github.io/forkamuaja/style.css" rel="stylesheet" type="text/css" />
-  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-  
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Pantun Romantis Buat Kamu</title>
-<link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
-<meta name="description" content="HTML Replit Coding">
-<!-- 
-  Made with love by Rayys!
-  
-     Blog: feeldream.id
-     Instagram: @rayyarrr
-     TikTok: @feelthisray
-     Email: rayyarr73@gmail.com
-     
-  Thanks to all <3
--->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nina Cantikkkk❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff69b4; /* Pink color */
+            z-index: 10; /* Ensure it's above the canvas */
+            position: absolute; /* Position to overlay the canvas */
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 2rem;
+        }
+
+        button {
+            position: absolute;
+            top: 80%;
+            z-index: 20;
+            background-color: #ff69b4;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        #pinkboard {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Send canvas to the background */
+        }
+    </style>
 </head>
 <body>
-  
-   <!-- Ganti Audio di sini -->
-   <audio src="https://feeldreams.github.io/angelbabypart2.mp3" id="linkmp3" class="sembunyi"></audio>
-   
-   <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://feeldreams.github.io/pics/awan1.jpg" id="wallpaper"/>
-   </div>
-   
-   <div id='Content'>
-     <div id="ftAwal">
-       <!-- Stiker Pembuka -->
-       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal"/>
-     </div>
-     <div id="loveIn">
-       <!-- Tombol LOVE --><label class='lovein'>❤️</label>
-     </div>
-     <p id="ket">Sentuh LOVEnya!</p>
-     
-     <div class="kumpulanstiker">
-         <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
-         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker1"/>
-         <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker2"/>
-         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker3"/>
-         <img src="https://feeldreams.github.io/gumush.gif" id="fotostikerA"/>
-     </div>
-     
-     <div><div id='pergeseran'>
-      
-        <p><b>
-          <span>hai kamuuu<br>aku ada pantun buat kamu</span>
-        </b></p>
-        
-        <p><b>
-          <span>ikan hiu bawa koper</span>
-        </b></p>
-        
-        <p><b>
-          <span>i love uu forever<3333</span>
-        </b></p>
-        <p><b>
-          <span>sate² apa yg bikin aku bahagia?</span>
-        </b></p>
-        <p><b>
-          <span>saterusnya sama kamu<br>😍😆🥰🤭🤣</span>
-        </b></p>
-        
-        <p><b>
-          <span id="iniakhir">terakhir nihh ><</span>
-        </b></p>
-       
-     </div></div>
-     <p id="ketgeser">Klik untuk Geser!</p>
-     <div><blockquote id='bq'>
-       <p id="kalimat"></p>
-       <p id="pesanAkhir" class="gaya4"></p>
-     </blockquote></div>
-   </div>
-   
-<script>
-  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2500, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);Content.style = "opacity:1;margin-top:14vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); 
-  
-  teksAkhir = "di jalan ada lampu,<br>di kuburan ada hantu,<br>di kerajaan ada ratu,<br>tapi di hatiku...<br>cuma ada kamu, jiakhhh<3333";
-  teksAkhirB = "i love uuu ><";
-  document.getElementById("loveIn").onclick = function() {
-    if(fungsiAwal==0){
-      audio.play();
-      loveIn.style="transition:all .8s ease;transform:scale(15);opacity:0";
-      ftAwal.style="opacity:0";
-      wallpaper.style="transform: scale(1);";
-      ket.style="display:none";
-      fungsiAwal=1;setTimeout(initengahan,300);setTimeout(pgmuncul,600)
-    }
-  }
-  
-  const box = document.getElementById('pergeseran');
-  const directChildren = box.children.length;
-  console.log('Script ini dibuat oleh: www.feeldream.id');
-  console.log('Instagram: @rayyarrr');
-  console.log('Total Slide: ', directChildren);
-  totalPesan = directChildren;
-  
-  aktigeser=0;thisgeser=1;
-  document.getElementById("bodyblur").onclick = function() {
-    if(aktigeser==1){
-      document.getElementById('pergeseran').scrollLeft += 300;
-      hsementara();
-      if(thisgeser>1){
-      if(thisgeser%2==0){wallpaper.style="transform: scale(2)";} else {wallpaper.style="transform: scale(1)";}
-      }
-      if(thisgeser==3){
-        ftganti=1;fthilang();
-      }
-      if(thisgeser==4){
-        ftganti=0;fthilang();
-      }
-      if(thisgeser==5){
-        ftganti=2;fthilang();
-      }
-      if(thisgeser==6){
-        ftganti=3;fthilang();
-      }
-    }
-  }
-  function hsementara(){
-    ketgeser.style="position:relative;";
-    thisgeser+=1;aktigeser=0;setTimeout(munculkembali,500)
-  }
-  function munculkembali(){
-    if(thisgeser<totalPesan){
-      ketgeser.style="position:relative;transform:scale(1);opacity:.8";
-      aktigeser=1;
-    }
-    if(thisgeser==totalPesan){setTimeout(aksiakhir,900)}
-  }
-  
-  function aksiakhir(){
-    ketgeser.style="";
-    ftganti=9;ftmuncul();
-    pergeseran.style="position:relative;margin-top:5vh;transform:scale(0);";
-    iniakhir.style="opacity:0";setTimeout(bqmuncul,400);
-  }
-  
-  kalimat.innerHMTL="";
-  function kalimatakhir(){
-    iniakhir.style="";iniakhir.innerHTML="";
-    new TypeIt("#kalimat", {
-      strings: ["" + teksAkhir],
-      startDelay: 50, speed: 50, cursor: true,
-      afterComplete: function(){
-         setTimeout(mulaiketikA,300);
-         kalimat.innerHTML=teksAkhir;
-      },}).go();
-  }
-  
-  function initengahan(){
-    ftAwal.style="display:none";loveIn.style="display:none";ket.style="display:none";
-    Content.style = "opacity:1;margin-top:7vh";
-  }
-  
-  function ftmuncul(){
-    if(ftganti==0){fotostiker.src = deffotostiker;}
-    if(ftganti==1){fotostiker.src = fotostiker1.src;}
-    if(ftganti==2){fotostiker.src = fotostiker2.src;}
-    if(ftganti==3){fotostiker.src = fotostiker3.src;}
-    
-    if(ftganti!=1 && ftganti!=9 && ftganti!=10){fotostiker.style="display:inline-flex;opacity:1;transform:scale(1)";}
-    if(ftganti==11){fotostiker.src = fotostikerA2.src;}
-    
-    if(ftganti==1 || ftganti==2){fotostiker.style="display:inline-flex;opacity:1;transform:scale(1);width:120px;height:120px;padding:none;background:none;box-shadow:none;border-radius:0;border:none";}
-    if(ftganti==9){fotostiker.style="display:inline-flex;opacity:0;transform:scale(1);padding:none;background:none;box-shadow:none;border-radius:0;border:none";}
-    if(ftganti==10){fotostiker.src = fotostikerA.src;fotostiker.style="display:inline-flex;opacity:1;transform:scale(1);width:120px;height:120px;padding:none;background:none;box-shadow:none;border:none;border-radius:0;";}
-  }
-  function fthilang(){fotostiker.style="display:inline-flex;opacity:0;transform:scale(0)";if(ftganti<=11){setTimeout(ftmuncul,250)} if(ftganti>=12){wallpaper.style="opacity:.7;transform: scale(2);";}}
-  function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";}
-  
-  function pgmuncul(){pergeseran.style="position:relative;margin-top:5vh;opacity:1;visibility:visible;transform:scale(1);";ftmuncul();setTimeout(munculkembali,500)}
-  function bqmuncul(){pergeseran.style="display:none";bq.style = "position:relative;opacity:1;visibility:visible;margin-top:0;transform: scale(1);";setTimeout(kalimatakhir,200);}
-  function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;transition:all .7s ease;";}
-  
-  function tombol(){Tombol.style="opacity:1;transform: scale(1);";}
-  
-  pesanAkhir.innerHTML = "";
-  function mulaiketikA(){
-  ftganti=10;ftmuncul();setInterval(berjatuhan,250);
-  pesanAkhir.style="position:relative;opacity:1;visibility:visible;transform: scale(1)";
-  new TypeIt("#pesanAkhir", {
-  strings: ["" + teksAkhirB], startDelay: 100, speed: 50, cursor: false, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
-  afterComplete: function(){
-      pesanAkhir.style.animation="rto .8s infinite alternate";
-  },}).go();
-  }
-</script>
-<script >
-  
-</script>
+    <audio src="banda.mp3" id="linkmp3"></audio>
+    <h1>Love You Ninaaa❤️</h1>
+    <button onclick="playMusic()">Play Music</button>
+    <canvas id="pinkboard"></canvas>
+    <script>
+                const audio = document.getElementById('linkmp3');
+
+        function playMusic() {
+            audio.play().catch(error => {
+                console.error("Error playing audio:", error);
+            });
+        }
+
+        // Example code for canvas animations
+        const canvas = document.getElementById("pinkboard");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function drawHeart(x, y, size) {
+            ctx.fillStyle = "pink";
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.bezierCurveTo(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+            ctx.bezierCurveTo(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+            ctx.fill();
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const size = Math.random() * 50 + 10;
+                drawHeart(x, y, size);
+            }
+            requestAnimationFrame(render);
+        }
+        render();
+    </script>
+    <script >
+                var settings = {
+                                particles: {
+                                    length: 500, // Number of particles
+                                    duration: 2, // Particle duration in seconds
+                                    velocity: 100, // Particle velocity in pixels per second
+                                    effect: -0.75, // Particle effect (0 = no effect, -1 = reverse, 1 = normal)
+                                    size: 30, // Particle size in pixels
+                                },
+                            };
+                            
+                            (function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}()); // Polyfill for requestAnimationFrame
+                            
+                            var Point = (function() { // Point class
+                                function Point(x, y) { // Constructor
+                                    this.x = (typeof x !== 'undefined') ? x : 0;
+                                    this.y = (typeof y !== 'undefined') ? y : 0;
+                                }   
+                                Point.prototype.clone = function() { // Clone point
+                                    return new Point(this.x, this.y);
+                                };
+                                Point.prototype.length = function(length) { // Get or set length
+                                    if (typeof length == 'undefined')
+                                    return Math.sqrt(this.x * this.x + this.y * this.y);
+                                    this.normalize();
+                                    this.x *= length;
+                                    this.y *= length;
+                                    return this;
+                                };
+                                Point.prototype.normalize = function() { // Normalize point
+                                    var length = this.length();
+                                    this.x /= length;
+                                    this.y /= length;
+                                    return this;
+                                };
+                            
+                                return Point;
+                            })();
+                            
+                            var Particle = (function() { // Particle class
+                                function Particle() {
+                                    this.position = new Point();
+                                    this.velocity = new Point();
+                                    this.acceleration = new Point();
+                                    this.age = 0;
+                                }
+                                Particle.prototype.initialize = function(x, y, dx, dy) { // Initialize particle
+                                    this.position.x = x;
+                                    this.position.y = y;
+                                    this.velocity.x = dx;
+                                    this.velocity.y = dy;
+                                    this.acceleration.x = dx * settings.particles.effect;
+                                    this.acceleration.y = dy * settings.particles.effect;
+                                    this.age = 0;
+                                };
+                                Particle.prototype.update = function(deltaTime) { // Update particle
+                                    this.position.x += this.velocity.x * deltaTime;
+                                    this.position.y += this.velocity.y * deltaTime;
+                                    this.velocity.x += this.acceleration.x * deltaTime;
+                                    this.velocity.y += this.acceleration.y * deltaTime;
+                                    this.age += deltaTime;
+                                };
+                                Particle.prototype.draw = function(context, image) { // Draw particle
+                                    function ease(t) { // Ease function
+                                    return (--t) * t * t + 1;
+                                    }
+                                    var size = image.width * ease(this.age / settings.particles.duration);
+                                    context.globalAlpha = 1 - this.age / settings.particles.duration;
+                                    context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+                                };
+                            
+                                return Particle;
+                            })();
+                            
+                            var ParticlePool = (function() { // Particle pool class
+                                var particles, firstActive = 0, firstFree = 0, duration = settings.particles.duration;
+                            
+                                function ParticlePool(length) { // Constructor
+                                    particles = new Array(length);
+                                    for (var i = 0; i < particles.length; i++)
+                                    particles[i] = new Particle();
+                                }
+                                ParticlePool.prototype.add = function(x, y, dx, dy) { // Add particle
+                                    particles[firstFree].initialize(x, y, dx, dy);
+                                    firstFree++;
+                            
+                                    if (firstFree == particles.length) { // Reset pool
+                                        firstFree = 0;
+                                    }
+                                    if (firstActive == firstFree) { // Reset pool
+                                        firstActive++;
+                                    }
+                                    if (firstActive == particles.length) { // Reset pool
+                                        firstActive = 0;
+                                    }
+                                };
+                                ParticlePool.prototype.update = function(deltaTime) { // Update particles
+                                    var i;
+                                    
+                                    if (firstActive < firstFree) { // Update particles
+                                        for (i = firstActive; i < firstFree; i++) { // Update particles
+                                            particles[i].update(deltaTime);
+                                        }
+                                    }
+                                    if (firstFree < firstActive) { // Update particles
+                                        for (i = firstActive; i < particles.length; i++) { // Update particles
+                                            particles[i].update(deltaTime);
+                                        }
+                                        for (i = 0; i < firstFree; i++) { // Update particles
+                                            particles[i].update(deltaTime);
+                                        }
+                                    }
+                                    while (particles[firstActive].age >= duration && firstActive != firstFree) { // Remove old particles
+                                        firstActive++;
+                                        if (firstActive == particles.length) { // Reset pool
+                                            firstActive = 0;
+                                        }
+                                    }
+                                };
+                                ParticlePool.prototype.draw = function(context, image) { // Draw particles
+                                    if (firstActive < firstFree) { // Draw particles
+                                        for (i = firstActive; i < firstFree; i++) { // Draw particles
+                                            particles[i].draw(context, image);
+                                        }
+                                    }
+                                    if (firstFree < firstActive) { // Draw particles
+                                        for (i = firstActive; i < particles.length; i++) { // Draw particles
+                                            particles[i].draw(context, image);
+                                        }
+                                        for (i = 0; i < firstFree; i++) { // Draw particles
+                                            particles[i].draw(context, image);
+                                        }
+                                    }
+                                };
+                            
+                                return ParticlePool;
+                            })();
+                            
+                            (function(canvas) { // Main function
+                                var context = canvas.getContext('2d'), particles = new ParticlePool(settings.particles.length), particleRate = settings.particles.length / settings.particles.duration, time;
+                            
+                                function pointOnHeart(t) { // Get point on heart
+                                    return new Point(
+                                        160 * Math.pow(Math.sin(t), 3),
+                                        130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+                                    );
+                                }
+                            
+                                var image = (function() { // Create particle image
+                                    var canvas  = document.createElement('canvas'), context = canvas.getContext('2d');
+                                    canvas.width  = settings.particles.size;
+                                    canvas.height = settings.particles.size;
+                            
+                                    function to(t) { // Convert t to radians 
+                                        var point = pointOnHeart(t);
+                                        point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+                                        point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+                                    
+                                        return point;
+                                    }
+                            
+                                    context.beginPath();
+                                    var t = -Math.PI;
+                                    var point = to(t);
+                                    context.moveTo(point.x, point.y);
+                            
+                                    while (t < Math.PI) { // Draw heart
+                                        t += 0.01;
+                                        point = to(t);
+                                        context.lineTo(point.x, point.y);
+                                    }
+                            
+                                    context.closePath();
+                                    context.fillStyle = '#ea80b0';
+                                    context.fill();
+                                    var image = new Image();
+                                    image.src = canvas.toDataURL();
+                            
+                                    return image;
+                                })();
+                            
+                                function render() { // Render function
+                                    requestAnimationFrame(render);
+                                    var newTime = new Date().getTime() / 1000, deltaTime = newTime - (time || newTime);
+                                    time = newTime;
+                                    context.clearRect(0, 0, canvas.width, canvas.height);
+                                    var amount = particleRate * deltaTime;
+                            
+                                    for (var i = 0; i < amount; i++) { // Add particles
+                                        var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+                                        var dir = pos.clone().length(settings.particles.velocity);
+                                        particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+                                    }
+                                    
+                                    particles.update(deltaTime);
+                                    particles.draw(context, image);
+                                }
+                            
+                                function onResize() { // Resize function
+                                    canvas.width  = canvas.clientWidth;
+                                    canvas.height = canvas.clientHeight;
+                                }
+                            
+                                window.onresize = onResize;
+                                
+                                setTimeout(function() { // Start
+                                    onResize();
+                                    render();
+                                }, 10);
+                            })
+                            (document.getElementById('pinkboard')); // Get canvas element 
+    </script>
 </body>
 </html>
