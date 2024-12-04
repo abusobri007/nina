@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link href="https://feeldreams.github.io/withyou/style.css" rel="stylesheet" type="text/css" />
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>You Can Do It!</title>
+<link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
+</head>
+<body>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="about-you.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper -->
+     <img src="https://feeldreams.github.io/wp2.jpeg" id="wallpaper"/>
+     <div id="beneranblur"></div>
+   </div>
+   
+   <div id='Content'>
+     <div id="kadoIn">
+       <!-- Tombol Surat -->
+       <img src="https://feeldreams.github.io/kadoin.png"/>
+     </div>
+     <p id="ket">Klik Kadonya!</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/peach6.gif" id="fotostiker"/>
+         <img src="https://feeldreams.github.io/peach11.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/peachhug.gif" id="fotostiker3"/>
+     </div>
+     <p id="halo" class="halo">Hai, Kamu!</p>
+     <!-- Konten Pesan Setelah Aksi -->
+     <p id="halo2" class="halo sty2">Kamu Hebat! 🌟</p>
+     <p id="halo3" class="halo sty3">Kamu sudah bisa berjalan sejauh ini , semangat yaa cantik.</p>
+     <p id="tanggal" class="halo sty3"></p>
+     
+     <!-- Konten Pesan Akhir -->
+     <p id="kalimatbawah">Tetaplah Kuat ❤️</p> 
+     <p id="kalimatbawah2" class="sembunyi">Aku Percaya Pada Kamu ❤️</p> 
+     <p id="kalimatbawah3" class="sembunyi">Semoga tuhan selalu melindungi senyum mu yang manis itu ❤️</p>
+       
+     <div><blockquote id='bq' data-text='&#9829;'>
+       <!-- Konten Pembukaan -->
+       <p id="kalimat">Ingat, setiap hari adalah kesempatan baru.</p>
+       <p id="kalimatb">Jangan menyerah, karena ada aku yang selalu mendukungmu 🤗</p>
+       <p id="kalimatc">Meski badai datang, kamu tetap bisa melaluinya. 🥰</p>
+       <p id="kalimatd">Percayalah pada dirimu sendiri,</p>
+       <p id="kalimate">Tetaplah tersenyum manis seperti itu. 😊</p>
+       <p id="kalimate">Aku adalah orang yang selalu berdoa untuk kebahagiaan mu. 😊</p>
+       <p id="kalimatf">Klik LOVE di Samping Kiri ya!</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol"><a id="By">&#128140; Kirim Pesan Balasan</a></div>
+
+     <!-- Pesan yang dikirim ke WhatsApp -->
+     <span id="pesanWA" class="sembunyi">Aww, Terima Kasih atas Semangatnya! Aku pasti berjuang 💪</span>
+   </div>
+
+<script>
+  const body = document.querySelector("body"); 
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy; 
+  document.getElementById('tanggal').innerHTML = "- " + today + " -";
+</script>
+</body>
+</html>
